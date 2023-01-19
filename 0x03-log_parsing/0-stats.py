@@ -10,6 +10,7 @@ cache = {'200': 0, '400': 0, '401': 0,
 total_size = 0
 counter = 0
 
+
 try:
     for line in sys.stdin:
         line_list = line.split(" ")
@@ -28,8 +29,10 @@ try:
                 if value != 0:
                     print("{}: {}".format(key, value))
 
+
 except Exception as error:
     pass
+
 
 finally:
     print("File size: {}".format(total_size))
