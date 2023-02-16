@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-""" 
-Rotate 2d Matrix modules
+""" Rotate 2d Matrix modules
 """
 
 
