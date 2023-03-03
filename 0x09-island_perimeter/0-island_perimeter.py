@@ -3,7 +3,7 @@
 """
 
 
-def islane_perimeter(grid):
+def island_perimeter(grid):
     """Island perimeter,
     return perimeter of the grid
     """
