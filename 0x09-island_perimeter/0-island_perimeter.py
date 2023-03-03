@@ -3,24 +3,21 @@
 """
 
 
-def island_perimeter(grid):
-    """Island perametr
-    return the perimeter of the island describe in grid
+def islane_perimeter(grid):
+    """Island perimeter,
+    return perimeter of the grid
     """
-    p = 0
-    if type(grid) != list:
-        return 0
-    n = len(grid)
-    for i, row in enumerate(grid):
-        m = len(row)
-        for j, cell in enumerate(row):
-            if cell == 0:
-                continue
-            edges = (
-                i == 0 or (len(grid[i - 1]) > j and grid[i - 1][j] == 0),
-                j == m - 1 or (m > j + 1 and row[j + 1] == 0),
-                i == n - 1 or (len(grid[i + 1]) > j and grid[i + 1][j] == 0),
-                j == 0 or row[j - 1] == 0,
-            )
-            perimeter += sum(edges)
+    perimeter = 0
+    m = len(grid)
+    n = len(grid[0])
+
+    for i in range(m):
+        for j in range(n):
+            if grid[i][j] == 1:
+                for x, y in [(0, 1), (1, 0), (-1, 0), (0, -1)]:
+                    a, b = i + x, j + y
+                    if a > m or b > n or a < 0 or b < 0 or grid[a][b] == 0:
+                        perimeter += 1
+
     return perimeter
+
